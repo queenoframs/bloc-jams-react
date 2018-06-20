@@ -84,9 +84,13 @@ componentWillUnmount() {
  handleNextClick(){
    const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
 <<<<<<< HEAD
+<<<<<<< HEAD
    const newIndex = Math.min(this.state.album.songs.length - 1, currentIndex + 1);
 =======
    const newIndex = Math.min((this.state.album.songs.length - 1), currentIndex + 1);
+>>>>>>> assignment-9-bloc-jams-react-rangeinputs
+=======
+   const newIndex = Math.min(this.state.album.songs.length - 1, currentIndex + 1);
 >>>>>>> assignment-9-bloc-jams-react-rangeinputs
    const newSong = this.state.album.songs[newIndex];
    this.setSong(newSong);
