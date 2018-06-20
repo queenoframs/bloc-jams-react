@@ -11,7 +11,7 @@ class Album extends Component {
 
  this.state = {
    album: album,
-   currentSong: album.songs[0],
+   currentSong: undefined,
    isPlaying: false
  };
 
@@ -74,11 +74,12 @@ class Album extends Component {
          {this.state.album.songs.map( (song, index) =>
            <tr className="song" key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.handleHover(song)} onMouseLeave={() => this.handleHoverOff(song)} >
              {
-               this.state.isPlaying & this.state.currentSong === song && <button><span className="ion-md-pause"></span></button>
-               || this.state.hover === song && <button><span className="ion-md-play"></span></button>
-               || this.state.currentSong === song && <button><span className="ion-md-play"></span></button>
-               || this.state.isPlaying !== song && <td className="song-number">{song.number}{index + 1}</td>
-            }
+               this.state.isPlaying && this.state.currentSong === song ? ( <button><span className="ion-md-pause"></span></button> )
+                : this.state.hover === song ? ( <button><span className="ion-md-play"></span></button> )
+                : this.state.currentSong === song ? ( <button><span className="ion-md-play"></span></button> )
+                : (<td className="song-number">{song.number}{index + 1}</td>)
+             }
+
              <td className="song-title">{song.title}</td>
              <td className="song-duration">{song.duration}</td>
            </tr>
