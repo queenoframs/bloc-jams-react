@@ -143,13 +143,13 @@ componentWillUnmount() {
          <tbody>
          {this.state.album.songs.map( (song, index) =>
            <tr className="song" key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.handleHover(song)} onMouseLeave={() => this.handleHoverOff(song)} >
-             {
+             <td className="song actions">{
                this.state.isPlaying && this.state.currentSong === song ? ( <button><span className="ion-md-pause"></span></button> )
-                : this.state.hover === song ? ( <button><span className="ion-md-play"></span></button> )
-                : this.state.currentSong === song ? ( <button><span className="ion-md-play"></span></button> )
-                : (<td className="song-number">{song.number}{index + 1}</td>)
-             }
-
+              : this.state.hover === song ? ( <button><span className="ion-md-play"></span></button> )
+              : this.state.currentSong === song ? ( <button><span className="ion-md-play"></span></button> )
+              : ( <span className="song-number">{song.number}{index + 1}</span> )
+              }
+             </td>
              <td className="song-title">{song.title}</td>
              <td className="song-duration">{this.formatTime(song.duration)}</td>
            </tr>
