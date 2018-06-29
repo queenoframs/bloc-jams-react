@@ -1,0 +1,12 @@
+.player-bar {
+  background-color: purple;
+  color: white;
+  font-size: 12px;
+  height: 250px;
+}
+
+#previous, #play-pause, #next, #play-pause-button {
+  background-color: purple;
+  color: white;
+  border: none;
+}

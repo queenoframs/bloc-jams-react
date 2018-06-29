@@ -1,0 +1,41 @@
+header {
+    background-color: purple;
+    height: 250px;
+    padding: 20px;
+    color: white;
+}
+
+#album-cover-art {
+  height: 150px;
+  width: 150px;
+}
+
+.ion-md-pause, .ion-md-play, .song-number {
+ background-color: white;
+ color: black;
+ border: none;
+ font-size: 12px;
+ text-align: left;
+}
+
+#ion-play, #ion-pause {
+  background-color: white;
+  color: black;
+  border: none;
+  font-size: 12px;
+  text-align: left;
+}
+
+.song-title, .song-duration {
+  color: black;
+  border: none;
+  font-size: 12px;
+  text-align: right;
+}
+
+#song-list {
+  text-align: right;
+  margin: auto;
+  padding: 20px;
+  width: 250px;
+}
