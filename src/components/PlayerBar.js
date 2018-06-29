@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '.././styles/PlayerBar.css';
 
 class PlayerBar extends Component {
   render() {
@@ -9,7 +10,7 @@ class PlayerBar extends Component {
             <span className="ion-md-skip-backward"></span>
           </button>
           <button id="play-pause" onClick={this.props.handleSongClick} >
-            <span className={this.props.isPlaying ? 'ion-md-pause' : 'ion-md-play'}></span>
+            <span id="play-pause-button" className={this.props.isPlaying ? 'ion-md-pause' : 'ion-md-play'}></span>
             </button>
             <button id="next" onClick={this.props.handleNextClick}>
             <span className="ion-md-skip-forward"></span>

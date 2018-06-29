@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
+import '.././styles/Album.css';
 
 class Album extends Component {
  constructor(props) {
@@ -144,9 +145,9 @@ componentWillUnmount() {
          {this.state.album.songs.map( (song, index) =>
            <tr className="song" key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.handleHover(song)} onMouseLeave={() => this.handleHoverOff(song)} >
              <td className="song actions">{
-               this.state.isPlaying && this.state.currentSong === song ? ( <button><span className="ion-md-pause"></span></button> )
-              : this.state.hover === song ? ( <button><span className="ion-md-play"></span></button> )
-              : this.state.currentSong === song ? ( <button><span className="ion-md-play"></span></button> )
+               this.state.isPlaying && this.state.currentSong === song ? ( <button id="ion-pause"><span className="ion-md-pause"></span></button> )
+              : this.state.hover === song ? ( <button id="ion-play"><span className="ion-md-play"></span></button> )
+              : this.state.currentSong === song ? ( <button id="ion-play"><span className="ion-md-play"></span></button> )
               : ( <span className="song-number">{song.number}{index + 1}</span> )
               }
              </td>
@@ -156,19 +157,21 @@ componentWillUnmount() {
          )}
          </tbody>
        </table>
-       <PlayerBar
-         isPlaying={this.state.isPlaying}
-         currentSong={this.state.currentSong}
-         currentTime={this.audioElement.currentTime}
-         duration={this.audioElement.duration}
-         handleSongClick={() => this.handleSongClick(this.state.currentSong)}
-         handlePrevClick={() => this.handlePrevClick()}
-         handleNextClick={() => this.handleNextClick()}
-         handleTimeChange={(e) => this.handleTimeChange(e)}
-         handleVolumeControl={(e) => this.handleVolumeControl(e)}
-         formatTime={(e) => this.formatTime(e)}
-         />
-     </section>
+       <footer>
+           <PlayerBar
+             isPlaying={this.state.isPlaying}
+             currentSong={this.state.currentSong}
+             currentTime={this.audioElement.currentTime}
+             duration={this.audioElement.duration}
+             handleSongClick={() => this.handleSongClick(this.state.currentSong)}
+             handlePrevClick={() => this.handlePrevClick()}
+             handleNextClick={() => this.handleNextClick()}
+             handleTimeChange={(e) => this.handleTimeChange(e)}
+             handleVolumeControl={(e) => this.handleVolumeControl(e)}
+             formatTime={(e) => this.formatTime(e)}
+           />
+        </footer>
+      </section>
    );
  }
 }
